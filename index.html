@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 키르기스스탄 여름단기선교 안내</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1565C0;
+    --primary-light: #42A5F5;
+    --primary-dark: #0D47A1;
+    --accent: #00BCD4;
+    --accent-light: #80DEEA;
+    --warm: #0288D1;
+    --warm-light: #4FC3F7;
+    --cream: #F0F7FF;
+    --sand: #E1F0FD;
+    --text: #1A2A3A;
+    --text-light: #5A7A9A;
+    --white: #FFFFFF;
+    --card-bg: rgba(255, 255, 255, 0.94);
+    --shadow: 0 8px 32px rgba(21, 101, 192, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background:
+      linear-gradient(170deg, rgba(13,71,161,0.55) 0%, rgba(21,101,192,0.4) 50%, rgba(0,188,212,0.25) 100%),
+      url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1600&q=80') center 30%/cover no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, var(--cream), transparent);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(2rem, 5.5vw, 3.6rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    animation: fadeUp 0.7s ease 0.25s both;
+  }
+  .hero h1 .gold { color: var(--accent-light); text-shadow: 0 1px 12px rgba(0,188,212,0.4); }
+
+  .hero-sub {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(255,255,255,0.9);
+    animation: fadeUp 0.7s ease 0.4s both;
+  }
+
+  .hero-date {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 28px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: fadeUp 0.7s ease 0.55s both;
+  }
+
+  /* ── Sections ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 56px 0; }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .section-desc {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    margin-bottom: 32px;
+  }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent-light), var(--primary-light), var(--accent-light));
+    border-radius: 3px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 24px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .tl-item.highlight::before {
+    background: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+
+  .tl-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+  }
+
+  .tl-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 6px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(66,165,245,0.15);
+  }
+
+  .tl-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .tl-card p, .tl-card li {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .tl-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 6px;
+  }
+  .tl-card ul li::before {
+    content: '·';
+    color: var(--accent);
+    font-weight: 900;
+    font-size: 1.2em;
+    margin-right: 8px;
+  }
+
+  /* ── Budget ── */
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .budget-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(66,165,245,0.12);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .budget-card:hover { transform: translateY(-3px); }
+
+  .budget-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .budget-icon.food { background: #E0F2FE; }
+  .budget-icon.transport { background: #E0F7FA; }
+  .budget-icon.stay { background: #E8EAF6; }
+  .budget-icon.ministry { background: #E0F2F1; }
+
+  .budget-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .budget-amount {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+  }
+  .budget-detail {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .budget-total {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(21,101,192,0.2);
+  }
+  .budget-total .label { font-size: 0.85rem; opacity: 0.85; margin-bottom: 4px; }
+  .budget-total .amount {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+  .budget-total .note {
+    font-size: 0.78rem;
+    opacity: 0.75;
+    margin-top: 4px;
+  }
+
+  /* ── Prep ── */
+  .prep-list { display: flex; flex-direction: column; gap: 16px; }
+
+  .prep-item {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .prep-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prep-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .prep-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ── Info Banner ── */
+  .info-banner {
+    background: var(--sand);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 24px;
+    border: 1px dashed var(--accent);
+    text-align: center;
+  }
+  .info-banner p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .info-banner strong { color: var(--primary); }
+
+  /* ── Source Tag ── */
+  .source-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--sand);
+    color: var(--text-light);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 1px solid rgba(66,165,245,0.15);
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  footer strong { color: var(--accent-light); }
+  footer { background: var(--primary-dark); }
+
+  /* ── Divider ── */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent), var(--primary-light));
+    border-radius: 3px;
+    margin: 0 auto 40px;
+  }
+
+  /* ── Flight ── */
+  .flight-route {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(66,165,245,0.12);
+    margin-bottom: 20px;
+  }
+  .flight-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .flight-badge {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .flight-airline {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  .flight-cities {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+  }
+  .flight-city { text-align: center; }
+  .flight-city .code {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--text);
+  }
+  .flight-city .name {
+    font-size: 0.72rem;
+    color: var(--text-light);
+  }
+  .flight-city .time {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 4px;
+  }
+  .flight-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-light);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    min-width: 120px;
+  }
+  .flight-arrow .plane {
+    font-size: 1.2rem;
+    color: var(--primary);
+    filter: drop-shadow(0 2px 4px rgba(21,101,192,0.2));
+  }
+  .flight-arrow .line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-light), var(--accent), var(--primary-light), transparent);
+    border-radius: 2px;
+  }
+  .flight-arrow .duration {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .bundle-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .bundle-table th, .bundle-table td {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(66,165,245,0.1);
+  }
+  .bundle-table th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+  .bundle-table td { background: var(--card-bg); }
+  .bundle-table tr:last-child td { border-bottom: none; }
+  .bundle-table .highlight-row td {
+    background: rgba(66,165,245,0.06);
+    font-weight: 600;
+  }
+  .bundle-price {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 900;
+    color: var(--primary);
+  }
+  .bundle-note {
+    background: rgba(66,165,245,0.06);
+    border: 1px solid rgba(66,165,245,0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .bundle-note strong { color: var(--primary); }
+  .tway-link {
+    display: inline-block;
+    margin-top: 16px;
+    background: linear-gradient(135deg, #E8192C, #ff4757);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 16px rgba(232,25,44,0.2);
+  }
+  .tway-link:hover { transform: translateY(-2px); }
+
+  /* ── Contact ── */
+  .contact-section {
+    background: var(--sand);
+    padding: 40px 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .contact-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 20px 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(66,165,245,0.1);
+  }
+  .contact-role {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .contact-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .contact-phone {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 16px 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(66,165,245,0.1);
+    font-size: 0.95rem;
+    color: var(--text);
+    text-align: center;
+  }
+  .contact-phone strong { color: var(--primary); }
+  @media (max-width: 600px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    html { font-size: 15px; }
+    .hero { min-height: 40vh; padding: 36px 20px; }
+    .budget-grid { grid-template-columns: 1fr 1fr; }
+    .prep-item { flex-direction: column; gap: 10px; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════ Hero ══════ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">서울광염교회 단기선교</div>
+    <h1>2026 <span class="gold">키르기스스탄</span><br>여름 단기선교</h1>
+    <p class="hero-sub">중앙아시아의 땅에서 하나님의 사랑을 전합니다</p>
+    <div class="hero-date">📅 2026. 7. 23 (목) ~ 7. 31 (금)</div>
+  </div>
+</header>
+
+<!-- ══════ 일정 ══════ -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-label">📋 SCHEDULE</div>
+    <h2 class="section-title">선교 일정</h2>
+    <p class="section-desc">9일간의 여정, 두 지역에서 펼쳐지는 사역입니다</p>
+    <div class="source-tag">📨 현지 선교사님(송영모) 요청사항 기반</div>
+
+    <div class="timeline">
+      <div class="tl-item highlight">
+        <div class="tl-date">7월 23일 (목)</div>
+        <div class="tl-card">
+          <h4>🛬 키르기스스탄 도착</h4>
+          <p>오후 11시 15분 도착 → 토크막으로 이동</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">7월 23일 ~ 25일</div>
+        <div class="tl-card">
+          <h4>🏠 토크막 우리교회 사역</h4>
+          <ul>
+            <li>24일: 장애인 시설 방문 사역</li>
+            <li>25일: 토크막 우리교회 여름성경학교</li>
+            <li>25일: 비쉬케렜로 이동</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">7월 26일 ~ 29일</div>
+        <div class="tl-card">
+          <h4>⛪ 노바빠블로프카 우리교회 사역</h4>
+          <ul>
+            <li>26일: 오전 예배 참석</li>
+            <li>27일~29일: 여름성경학교 (3일간)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">7월 29일 ~ 30일</div>
+        <div class="tl-card">
+          <h4>🗺️ 키르기스스탄 정탐</h4>
+          <p>현지 지역 탐방 및 기도</p>
+        </div>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-date">7월 31일 (금)</div>
+        <div class="tl-card">
+          <h4>✈️ 한국으로 출발</h4>
+          <p>오전 00:30분 출발</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ 항공편 ══════ -->
+<section id="flight">
+  <div class="container">
+    <div class="section-label">✈️ FLIGHT</div>
+    <h2 class="section-title">항공편 안내</h2>
+    <p class="section-desc">티웨이항공 직항편 (인천 ↔ 비슈케크)</p>
+    <div class="source-tag">📅 2026년 3월 13일 기준 · 요금은 변동될 수 있습니다</div>
+
+    <!-- 가는편 -->
+    <div class="flight-route">
+      <div class="flight-header">
+        <span class="flight-badge">가는편</span>
+        <span class="flight-airline">TW437 · 티웨이항공 · 7월 23일 (목)</span>
+      </div>
+      <div class="flight-cities">
+        <div class="flight-city">
+          <div class="code">ICN</div>
+          <div class="name">서울/인천</div>
+          <div class="time">18:50</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="plane">✈</div>
+          <div class="line"></div>
+          <span class="duration">직항 · 7시간 25분</span>
+        </div>
+        <div class="flight-city">
+          <div class="code">BSZ</div>
+          <div class="name">비슈케크</div>
+          <div class="time">23:15</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 오는편 -->
+    <div class="flight-route">
+      <div class="flight-header">
+        <span class="flight-badge">오는편</span>
+        <span class="flight-airline">TW438 · 티웨이항공 · 7월 31일 (금)</span>
+      </div>
+      <div class="flight-cities">
+        <div class="flight-city">
+          <div class="code">BSZ</div>
+          <div class="name">비슈케크</div>
+          <div class="time">00:30</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="plane">✈</div>
+          <div class="line"></div>
+          <span class="duration">직항 · 6시간 05분</span>
+        </div>
+        <div class="flight-city">
+          <div class="code">ICN</div>
+          <div class="name">서울/인천</div>
+          <div class="time">09:35</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 운임 비교 -->
+    <h3 style="font-size:1.1rem; font-weight:700; color:var(--text); margin:28px 0 6px;">부가서비스 번들 비교 (왕복 기준)</h3>
+    <p style="font-size:0.8rem; color:var(--text-light); margin-bottom:16px;">스마트운임 기준 왕복 항공료 <strong style="color:var(--primary);">1,028,980원</strong>에 번들 요금이 추가됩니다.</p>
+
+    <table class="bundle-table">
+      <tr>
+        <th>구분</th>
+        <th>백팩</th>
+        <th>멀티팩</th>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">위탁 수하물</td>
+        <td><strong>20KG</strong></td>
+        <td><strong>20KG</strong></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">좌석 선택</td>
+        <td>스탠다드 존</td>
+        <td>전 좌석</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">기내식</td>
+        <td>없음</td>
+        <td>1회 제공</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;">추가 요금 (편도)</td>
+        <td>+58,000원</td>
+        <td>+70,000원</td>
+      </tr>
+      <tr class="highlight-row">
+        <td style="font-weight:700;">왕복 합계</td>
+        <td class="bundle-price" style="font-size:1.05rem;">1,144,980원</td>
+        <td class="bundle-price" style="font-size:1.05rem;">1,168,980원</td>
+      </tr>
+    </table>
+
+    <!-- 중요 안내: 20KG 수하물 -->
+    <div style="background:linear-gradient(135deg, #FFF3E0, #FFE0B2); border:2px solid #FF9800; border-radius:14px; padding:20px 24px; margin-bottom:16px; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-8px; right:-8px; width:60px; height:60px; background:#FF9800; border-radius:50%; opacity:0.1;"></div>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+        <span style="font-size:1.5rem;">⚠️</span>
+        <span style="font-size:0.95rem; font-weight:900; color:#E65100;">선교 짐을 위해 최소 20KG 위탁 수하물이 필요합니다!</span>
+      </div>
+      <div style="background:rgba(255,255,255,0.7); border-radius:10px; padding:14px 18px; font-size:0.85rem; color:#4E342E; line-height:1.7;">
+        반드시 <strong style="color:#E65100;">백팩 또는 멀티팩</strong> 중 하나를 선택해 주세요.<br>
+        기본 베이직/밀팩은 15KG으로, 사역 물품을 가져가기에 부족합니다.
+      </div>
+    </div>
+
+    <!-- 기내식 선택 안내 -->
+    <div class="bundle-note">
+      🍽️ 기내식이 필요하신 분은 <strong>멀티팩</strong>(왕복 기내식 2회 포함), 필요 없으신 분은 <strong>백팩</strong>을 선택하시면 됩니다.<br>
+      차액은 왕복 기준 <strong>24,000원</strong>입니다. 개인 선호에 따라 선택해 주세요.
+    </div>
+
+    <!-- 빠른 예매 권유 -->
+    <div style="background:linear-gradient(135deg, #FFF3E0, #FFE0B2); border:2px solid #FF9800; border-radius:14px; padding:20px 24px; margin-top:20px; text-align:center;">
+      <div style="font-size:0.95rem; font-weight:900; color:#E65100; margin-bottom:8px;">🔥 항공권은 가능한 빨리 예매해 주세요!</div>
+      <div style="font-size:0.82rem; color:#4E342E; line-height:1.7;">
+        위 요금은 <strong style="color:#E65100;">3월 13일 기준</strong>이며, 세계 정세와 유가 변동에 따라 <strong style="color:#E65100;">빠르게 변할 수 있습니다.</strong><br>
+        좌석도 한정되어 있으니 서둘러 예매하시는 것을 권장드리니다.
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:8px;">항공권은 티웨이항공 홈페이지에서 직접 예매해 주세요</p>
+      <a href="https://www.twayair.com" target="_blank" class="tway-link">🔗 티웨이항공 예매하기</a>
+    </div>
+
+    <!-- 여권 만료일 확인 -->
+    <div style="margin-top:24px; background:linear-gradient(135deg, #D32F2F, #F44336); border-radius:14px; padding:22px 28px; text-align:center; color:#fff; box-shadow:0 6px 20px rgba(211,47,47,0.25); position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-10px; right:-10px; width:80px; height:80px; background:rgba(255,255,255,0.08); border-radius:50%;"></div>
+      <div style="position:absolute; bottom:-15px; left:-15px; width:60px; height:60px; background:rgba(255,255,255,0.06); border-radius:50%;"></div>
+      <div style="font-size:1.8rem; margin-bottom:8px;">🛂</div>
+      <div style="font-size:1.05rem; font-weight:900; margin-bottom:8px;">여권 만료일을 꼭 확인해 주세요!</div>
+      <div style="background:rgba(255,255,255,0.15); border-radius:10px; padding:12px 18px; display:inline-block;">
+        <span style="font-family:'Noto Serif KR',serif; font-size:1.1rem; font-weight:900;">출발일 기준 6개월 이상</span> 유효기간이 남아있어야 합니다.
+      </div>
+      <div style="font-size:0.78rem; opacity:0.85; margin-top:10px; line-height:1.6;">
+        만료일이 <strong>2027년 1월 23일 이전</strong>이면 여권을 갱신해 주세요.<br>
+        여권 갱신은 2~3주 소요되니 미리 준비해 주시기 바랍니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ 예산 ══════ -->
+<section id="budget">
+  <div class="container">
+    <div class="section-label">💰 BUDGET</div>
+    <h2 class="section-title">예산 안내</h2>
+    <p class="section-desc">성도 21명 · 인솔자 1명 · 선교사 2명 — 총 24명 기준 체류비입니다</p>
+    <div class="source-tag">📨 현지 선교사님(송영모) 요청사항 기반</div>
+
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-icon food">🍽️</div>
+        <div class="budget-label">식비</div>
+        <div class="budget-amount">$3,680</div>
+        <div class="budget-detail">24명 × 14끼<br>322,000솜</div>
+      </div>
+
+      <div class="budget-card">
+        <div class="budget-icon transport">🚐</div>
+        <div class="budget-label">교통</div>
+        <div class="budget-amount">$2,010</div>
+        <div class="budget-detail">18인승 차량 2대<br>176,000솜</div>
+      </div>
+
+      <div class="budget-card">
+        <div class="budget-icon stay">🏨</div>
+        <div class="budget-label">숙소</div>
+        <div class="budget-amount">$6,723</div>
+        <div class="budget-detail">22명 × 7박<br>588,000솜</div>
+      </div>
+
+      <div class="budget-card">
+        <div class="budget-icon ministry">🤝</div>
+        <div class="budget-label">사역비</div>
+        <div class="budget-amount">$500</div>
+        <div class="budget-detail">장애인 시설<br>기저귀·과일·생필품</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(66,165,245,0.08); border:1px solid rgba(66,165,245,0.2); border-radius:12px; padding:14px 20px; margin-bottom:20px; text-align:center;">
+      <p style="font-size:0.82rem; color:var(--text-light); margin:0;">📌 아래 비용은 <strong style="color:var(--primary);">현재 예상 비용</strong>이며, <strong style="color:var(--primary);">4월 초에 확정</strong>될 예정입니다.</p>
+    </div>
+
+    <!-- 총 예산 -->
+    <div class="budget-total">
+      <div class="label">총 예산 (체류비)</div>
+      <div class="amount">$12,913</div>
+      <div class="note">약 19,234,000원 (1$ = 1,489원 기준)</div>
+    </div>
+
+    <!-- 1인당 비용 정리 -->
+    <div style="background:var(--card-bg); border-radius:16px; padding:28px; margin-top:20px; box-shadow:var(--shadow); border:1px solid rgba(66,165,245,0.12);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:0.72rem; font-weight:700; color:var(--primary-light); letter-spacing:2px;">뀌래간 비용 정리</div>
+      </div>
+
+      <!-- 항목별 내역 -->
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(66,165,245,0.1);">
+        <span style="font-size:0.88rem; color:var(--text);">1인당 체류비 (24명: 성도 21 · 인솔자 1 · 선교사 2)</span>
+        <span style="font-size:0.95rem; font-weight:700; color:var(--text);">801,400원</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(66,165,245,0.1);">
+        <span style="font-size:0.88rem; color:var(--text);">현지 체류 활동비</span>
+        <span style="font-size:0.95rem; font-weight:700; color:var(--text);">+ 100,000원</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:2px solid var(--primary-light);">
+        <span style="font-size:0.95rem; font-weight:700; color:var(--primary);">1인당 합계</span>
+        <span style="font-family:'Noto Serif KR',serif; font-size:1.2rem; font-weight:900; color:var(--primary);">약 901,400원</span>
+      </div>
+
+      <!-- 교회 지원금 (구분 강조) -->
+      <div style="margin-top:16px; background:linear-gradient(135deg, rgba(0,188,212,0.08), rgba(66,165,245,0.08)); border:1px dashed var(--accent); border-radius:12px; padding:16px 20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span style="font-size:0.68rem; font-weight:700; color:var(--accent); letter-spacing:1px; display:block; margin-bottom:2px;">CHURCH SUPPORT</span>
+            <span style="font-size:0.9rem; font-weight:600; color:var(--text);">교회 지원금</span>
+          </div>
+          <span style="font-family:'Noto Serif KR',serif; font-size:1.15rem; font-weight:900; color:var(--accent);">- 400,000원</span>
+        </div>
+      </div>
+
+      <!-- 개인 부담금 (최종 강조) -->
+      <div style="margin-top:16px; background:linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius:14px; padding:22px 24px; text-align:center; color:#fff;">
+        <div style="font-size:0.72rem; letter-spacing:2px; opacity:0.85; margin-bottom:6px;">개인 부담금 (3월 현재)</div>
+        <div style="font-family:'Noto Serif KR',serif; font-size:1.8rem; font-weight:900;">약 501,400원</div>
+        <div style="font-size:0.75rem; opacity:0.75; margin-top:4px;">체류비 + 활동비 - 교회지원금</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════ 준비사항 ══════ -->
+<section id="prep">
+  <div class="container">
+    <div class="section-label">✅ PREPARATION</div>
+    <h2 class="section-title">서울광염교회 준비사항</h2>
+    <p class="section-desc">성도님들이 미리 준비해 주시면 감사하겠습니다</p>
+    <div class="source-tag">📨 현지 선교사님(송영모) 요청사항 기반</div>
+
+    <div class="prep-list">
+      <div class="prep-item">
+        <div class="prep-num">1</div>
+        <div>
+          <h4>장애인 시설 방문 준비</h4>
+          <p>페이스 페인팅, 풍선 만들기 등을 준비해 주세요. 워십도 가능합니다. 방문 시 광염교회에서 준비한 선물을 전달할 예정입니다. (경비를 주시면 현지에서 어른용 기저귀 등을 구입하겠습니다)</p>
+        </div>
+      </div>
+
+      <div class="prep-item">
+        <div class="prep-num">2</div>
+        <div>
+          <h4>설교 준비</h4>
+          <p>목사님 설교: 토크막 우리교회 1회, 노바빠블로프카 우리교회 3회, 어른 예배 설교 1회 — 총 5회 준비해 주세요.</p>
+        </div>
+      </div>
+
+      <div class="prep-item">
+        <div class="prep-num">3</div>
+        <div>
+          <h4>레크레이션(게임) 준비</h4>
+          <p>토크막 우리교회에서 1회, 노바빠블로프카 우리교회에서 2회 — 총 3회 레크레이션을 진행할 수 있도록 준비해 주세요.</p>
+        </div>
+      </div>
+
+      <div class="prep-item">
+        <div class="prep-num">4</div>
+        <div>
+          <h4>식사 대접 준비</h4>
+          <p>여름성경학교 기간 중 한국식 점심 식사 대적: 토크막 우리교회 1회, 노바빠블로프카 우리교회 1회 — 총 2회 준비해 주세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-banner">
+      <p><strong>함께 준비하며 기대합니다!</strong><br>
+      이번 여름, 키르기스스탄 땅에서 하나님의 사랑을 전하는 귀한 시간이 될 것입니다.<br>
+      자세한 사항은 모임을 통해 안내드리겠습니다.</p>
+    </div>
+
+    <div style="background:linear-gradient(135deg, var(--primary), var(--accent)); border-radius:16px; padding:28px 32px; margin-top:20px; text-align:center; color:#fff; box-shadow:0 8px 24px rgba(21,101,192,0.2);">
+      <div style="font-size:0.75rem; letter-spacing:2px; opacity:0.85; margin-bottom:8px;">첫 모임 안내</div>
+      <div style="font-family:'Noto Serif KR',serif; font-size:1.3rem; font-weight:900; margin-bottom:6px;">3월 29일 (주일) 오후 2:30</div>
+      <div style="font-size:0.85rem; opacity:0.9;">단기선교팀 첫 모임이 있습니다. 꼭 참석해 주세요!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 문의 안내 ══════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label">📞 CONTACT</div>
+    <h2 class="section-title">문의 안내</h2>
+    <p class="section-desc">궁금하신 사항은 언제든지 연락해 주세요</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-role">인솔</div>
+        <div class="contact-name">이인수 목사</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-role">현지 선교사</div>
+        <div class="contact-name">송영모 선교사</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="contact-phone">
+        <strong>문의</strong>&nbsp;&nbsp;이인수 목사 &nbsp;📱&nbsp; 010-3297-1009
+      </div>
+    </div>
+
+    <!-- 카카오톡 채팅방 안내 -->
+    <div style="margin-top:24px; background:linear-gradient(135deg, #FEE500, #FFEB3B); border-radius:16px; padding:24px 28px; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+      <div style="font-size:1.6rem; margin-bottom:8px;">💬</div>
+      <div style="font-size:1rem; font-weight:900; color:#3C1E1E; margin-bottom:6px;">카카오톡 단기선교 채팅방이 열렸습니다!</div>
+      <div style="font-size:0.82rem; color:#5C3D1E; line-height:1.6;">추가 공지사항 및 안내는 카카오톡 채팅방을 통해 전달드리겠습니다.<br>아직 참여하지 않으신 분은 꼭 들어와 주세요!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ Footer ══════ -->
+<footer>
+  <strong>서울광염교회 × 2026 키르기스스탄 여름 단기선교</strong><br>
+  함께 기도하고, 함께 섬기며, 함께 나눕니다
+</footer>
+
+</body>
+</html>
+
