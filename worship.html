@@ -18,6 +18,7 @@
   html { font-size:17px; scroll-behavior:smooth; }
   body { background:var(--cream); color:var(--text); font-family:'Noto Sans KR',sans-serif; line-height:1.7; }
 
+  /* ── Nav ── */
   .nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(66,165,245,0.12); box-shadow:0 2px 12px rgba(21,101,192,0.06); }
   .nav-inner { max-width:860px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:56px; }
   .nav-logo { font-family:'Noto Serif KR',serif; font-size:0.92rem; font-weight:900; color:var(--primary); text-decoration:none; white-space:nowrap; }
@@ -29,25 +30,128 @@
   .nav-toggle { display:none; background:none; border:none; font-size:1.4rem; color:var(--text); cursor:pointer; padding:4px; }
   @media (max-width:600px) {
     .nav-toggle { display:block; }
-    .nav-menu { display:none; position:absolute; top:56px; left:0; right:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); flex-direction:column; padding:8px 16px 16px; border-bottom:1px solid rgba(66,165,245,0.12); }
+    .nav-menu { display:none; position:absolute; top:56px; left:0; right:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); flex-direction:column; padding:8px 16px 16px; border-bottom:1px solid rgba(66,165,245,0.12); box-shadow:0 8px 24px rgba(21,101,192,0.08); }
     .nav-menu.open { display:flex; }
     .nav-menu a { padding:12px 16px; font-size:0.9rem; }
   }
 
+  /* ── Page ── */
   .container { max-width:860px; margin:0 auto; padding:0 24px; }
-  .page-header { padding:60px 0 40px; text-align:center; }
+  .page-header { padding:48px 0 32px; text-align:center; }
   .page-header h1 { font-family:'Noto Serif KR',serif; font-size:1.8rem; font-weight:900; color:var(--primary); margin-bottom:8px; }
   .page-header p { color:var(--text-light); font-size:0.92rem; }
-  .coming-soon { text-align:center; padding:60px 24px; }
-  .coming-soon-icon { font-size:3rem; margin-bottom:16px; }
-  .coming-soon h2 { font-family:'Noto Serif KR',serif; font-size:1.3rem; color:var(--text); margin-bottom:8px; }
-  .coming-soon p { color:var(--text-light); font-size:0.88rem; line-height:1.7; }
 
-  footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; }
+  /* ── Worship Card ── */
+  .worship-card {
+    background:var(--card-bg);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(66,165,245,0.12);
+    margin-bottom:32px;
+    overflow:hidden;
+  }
+  .worship-header {
+    background:linear-gradient(135deg, var(--primary), var(--primary-light));
+    padding:24px 28px;
+    color:#fff;
+  }
+  .worship-date {
+    font-size:0.72rem;
+    letter-spacing:2px;
+    opacity:0.85;
+    margin-bottom:6px;
+  }
+  .worship-title {
+    font-family:'Noto Serif KR',serif;
+    font-size:1.3rem;
+    font-weight:900;
+    line-height:1.4;
+  }
+  .worship-ref {
+    font-size:0.82rem;
+    opacity:0.8;
+    margin-top:6px;
+  }
+  .worship-body { padding:28px; }
+
+  /* ── Scripture ── */
+  .scripture-block {
+    background:var(--sand);
+    border-radius:12px;
+    padding:24px;
+    margin-bottom:20px;
+    border-left:4px solid var(--accent);
+  }
+  .scripture-label {
+    font-size:0.72rem;
+    font-weight:700;
+    color:var(--primary-light);
+    letter-spacing:2px;
+    margin-bottom:12px;
+  }
+  .verse {
+    font-size:0.88rem;
+    color:var(--text);
+    line-height:1.9;
+    margin-bottom:4px;
+  }
+  .verse .num {
+    font-size:0.7rem;
+    font-weight:900;
+    color:var(--primary-light);
+    margin-right:4px;
+    vertical-align:super;
+  }
+  .verse-highlight {
+    background:linear-gradient(135deg, rgba(21,101,192,0.08), rgba(0,188,212,0.08));
+    border:2px solid var(--primary-light);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-top:12px;
+    margin-bottom:4px;
+  }
+  .verse-highlight .verse {
+    font-size:0.95rem;
+    font-weight:700;
+    color:var(--primary);
+    line-height:1.8;
+  }
+
+  /* ── Reflection ── */
+  .reflection {
+    background:rgba(66,165,245,0.05);
+    border:1px dashed var(--accent);
+    border-radius:12px;
+    padding:20px 24px;
+  }
+  .reflection-title {
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:8px;
+  }
+  .reflection p {
+    font-size:0.88rem;
+    color:var(--text-light);
+    line-height:1.8;
+  }
+  .reflection strong { color:var(--primary); }
+
+  /* ── Footer ── */
+  footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; margin-top:40px; }
   footer strong { color:var(--accent-light); }
+
+  @media (max-width:600px) {
+    html { font-size:15px; }
+    .worship-header { padding:20px 22px; }
+    .worship-body { padding:22px; }
+    .scripture-block { padding:18px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ══════ Navigation ══════ -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">키르기스스탄 <span>단기선교</span></a>
@@ -61,21 +165,103 @@
   </div>
 </nav>
 
+<!-- ══════ Header ══════ -->
 <div class="container">
   <div class="page-header">
     <h1>⛪ 예배</h1>
-    <p>키르기스스탄 현지 예배 및 사역 관련 안내</p>
+    <p>단기선교팀 모임 예배 및 말씀 안내</p>
   </div>
-  <div class="coming-soon">
-    <div class="coming-soon-icon">🙏</div>
-    <h2>준비 중입니다</h2>
-    <p>예배 일정, 설교 순서, 찬양 목록 등<br>자세한 내용이 곧 업데이트됩니다.</p>
+
+  <!-- ══════ 두 번째 예배: 4/26 (최신순) ══════ -->
+  <div class="worship-card">
+    <div class="worship-header" style="background:linear-gradient(135deg, var(--primary-dark), var(--primary));">
+      <div class="worship-date">2026년 4월 26일 (주일) · 제2차 모임</div>
+      <div class="worship-title">하나님이 입히시고 세우시는 사역자</div>
+      <div class="worship-ref">📖 레위기 8장 1~13절 (개역개정)</div>
+    </div>
+    <div class="worship-body">
+
+      <div class="scripture-block">
+        <div class="scripture-label">📜 레위기 8:1-13</div>
+
+        <div class="verse"><span class="num">1</span>여호와께서 모세에게 말씀하여 이르시되</div>
+        <div class="verse"><span class="num">2</span>너는 아론과 그의 아들들과 함께 그 의복과 관유와 속죄제의 수송아지와 숫양 두 마리와 무교병 한 광주리를 가지고</div>
+        <div class="verse"><span class="num">3</span>온 회중을 회막 문에 모으라</div>
+        <div class="verse"><span class="num">4</span>모세가 여호와께서 자기에게 명령하신 대로 하매 회중이 회막 문에 모인지라</div>
+        <div class="verse"><span class="num">5</span>모세가 회중에게 이르되 여호와께서 행하라고 명령하신 것이 이러하니라 하고</div>
+        <div class="verse"><span class="num">6</span>모세가 아론과 그의 아들들을 데려다가 물로 그들을 씻기고</div>
+        <div class="verse"><span class="num">7</span>아론에게 속옷을 입히며 띠를 띠우고 겉옷을 입히며 에봇을 걸쳐 입히고 에봇의 장식 띠를 띠워서 에봇을 몸에 매고</div>
+        <div class="verse"><span class="num">8</span>흉패를 붙이고 흉패에 우림과 둠밈을 넣고</div>
+        <div class="verse"><span class="num">9</span>그의 머리에 관을 씌우고 그 관 위 전면에 금 패를 붙이니 곧 거룩한 관이라 여호와께서 모세에게 명령하신 것과 같았더라</div>
+        <div class="verse"><span class="num">10</span>모세가 관유를 가져다가 성막과 그 안에 있는 모든 것에 발라 거룩하게 하고</div>
+        <div class="verse"><span class="num">11</span>또 제단에 일곱 번 뿌리고 또 그 제단과 그 모든 기구와 물두멍과 그 받침에 발라 거룩하게 하고</div>
+        <div class="verse"><span class="num">12</span>또 관유를 아론의 머리에 붓고 그에게 발라 거룩하게 하고</div>
+        <div class="verse"><span class="num">13</span>모세가 또 아론의 아들들을 데려다가 그들에게 속옷을 입히고 띠를 띠우며 관을 씌웠으니 여호와께서 모세에게 명령하신 것과 같았더라</div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-title">🙏 묵상</div>
+        <p>
+          하나님은 아론과 그의 아들들을 제사장으로 세우시기 전에, <strong>먼저 물로 씻기시고, 속옷을 입히시고, 겉옷을 입히시고, 에봇을 걸치시고, 흉패를 붙이시고, 관을 씌우시고, 관유를 부으셨습니다.</strong><br><br>
+          한 올 한 올, 한 겹 한 겹 — 하나님이 직접 준비시키셨습니다.<br><br>
+          우리의 선교도 마찬가지입니다. 우리가 스스로 준비하는 것이 아니라, <strong>하나님이 우리를 씻기시고, 입히시고, 세우십니다.</strong>
+          이 여름 키르기스스탄 땅에서의 사역도, 지금 이 순간부터 하나님이 우리를 한 사람 한 사람 준비시키고 계십니다.<br><br>
+          <strong>하나님의 준비하심을 신뢰하며, 그분이 입히시는 대로 나아갑시다.</strong>
+        </p>
+      </div>
+
+    </div>
   </div>
+
+  <!-- ══════ 첫 번째 예배: 4/12 ══════ -->
+  <div class="worship-card">
+    <div class="worship-header">
+      <div class="worship-date">2026년 4월 12일 (주일) · 제1차 모임</div>
+      <div class="worship-title">그리스도 예수 안에서 함께 지어져가는 선교</div>
+      <div class="worship-ref">📖 에베소서 2장 (개역개정)</div>
+    </div>
+    <div class="worship-body">
+
+      <div class="scripture-block">
+        <div class="scripture-label">📜 에베소서 2장</div>
+
+        <div class="verse"><span class="num">1</span>그는 허물과 죄로 죽었던 너희를 살리셨도다</div>
+        <div class="verse"><span class="num">2</span>그 때에 너희는 그 가운데서 행하여 이 세상 풍조를 따르고 공중의 권세 잡은 자를 따랐으니 곧 지금 불순종의 아들들 가운데서 역사하는 영이라</div>
+        <div class="verse"><span class="num">3</span>전에는 우리도 다 그 가운데서 우리 육체의 욕심을 따라 지내며 육체와 마음의 원하는 것을 하여 다른 이들과 같이 본질상 진노의 자녀이었더니</div>
+        <div class="verse"><span class="num">4</span>긍휼이 풍성하신 하나님이 우리를 사랑하신 그 큰 사랑을 인하여</div>
+        <div class="verse"><span class="num">5</span>허물로 죽은 우리를 그리스도와 함께 살리셨고 (너희는 은혜로 구원을 받은 것이라)</div>
+        <div class="verse"><span class="num">6</span>또 함께 일으키사 그리스도 예수 안에서 함께 하늘에 앉히시니</div>
+        <div class="verse"><span class="num">7</span>이는 그리스도 예수 안에서 우리에게 자비하심으로써 그 은혜의 지극히 풍성함을 오는 여러 세대에 나타내려 하심이라</div>
+        <div class="verse"><span class="num">8</span>너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라</div>
+        <div class="verse"><span class="num">9</span>행위에서 난 것이 아니니 이는 누구든지 자랑하지 못하게 함이라</div>
+        <div class="verse"><span class="num">10</span>우리는 그가 만드신 바라 그리스도 예수 안에서 선한 일을 위하여 지으심을 받은 자니 이 일은 하나님이 전에 예비하사 우리로 그 가운데서 행하게 하려 하심이니라</div>
+        <div class="verse"><span class="num">11</span>그러므로 생각하라 너희는 그 때에 육체로는 이방인이요 손으로 육체에 행한 할례를 받은 무리라 칭하는 자들로부터 할례를 받지 않은 무리라 칭함을 받는 자들이라</div>
+        <div class="verse"><span class="num">12</span>그 때에 너희는 그리스도 밖에 있었고 이스라엘 나라 밖의 사람이라 약속의 언약들에 대하여는 외인이요 세상에서 소망이 없고 하나님도 없는 자이더니</div>
+        <div class="verse"><span class="num">13</span>이제는 전에 멀리 있던 너희가 그리스도 예수 안에서 그리스도의 피로 가까워졌느니라</div>
+        <div class="verse"><span class="num">14</span>그는 우리의 화평이신지라 둘로 하나를 만드사 원수 된 것 곧 중간에 막힌 담을 자기 육체로 허시고</div>
+        <div class="verse"><span class="num">15</span>법조문으로 된 계명의 율법을 폐하셨으니 이는 이 둘로 자기 안에서 한 새 사람을 지어 화평하게 하시고</div>
+        <div class="verse"><span class="num">16</span>또 십자가로 이 둘을 한 몸으로 하나님과 화목하게 하려 하심이라 원수 된 것을 십자가로 소멸하시고</div>
+        <div class="verse"><span class="num">17</span>또 오셔서 먼 데 있는 너희에게 평안을 전하시고 가까운 데 있는 자들에게 평안을 전하셨으니</div>
+        <div class="verse"><span class="num">18</span>이는 그로 말미암아 우리 둘이 한 성령 안에서 아버지께 나아감을 얻게 하려 하심이라</div>
+        <div class="verse"><span class="num">19</span>그러므로 이제부터 너희는 외인도 아니요 나그네도 아니요 오직 성도들과 동일한 시민이요 하나님의 권속이라</div>
+        <div class="verse"><span class="num">20</span>너희는 사도들과 선지자들의 터 위에 세우심을 입은 자라 그리스도 예수께서 친히 모퉁잇돌이 되셨느니라</div>
+        <div class="verse"><span class="num">21</span>그의 안에서 건물마다 서로 연결하여 주 안에서 성전이 되어 가고</div>
+
+        <div class="verse-highlight">
+          <div class="verse"><span class="num">22</span>너희도 성령 안에서 하나님이 거하실 처소가 되기 위하여 그리스도 예수 안에서 함께 지어져 가느니라</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
+<!-- ══════ Footer ══════ -->
 <footer>
   <strong>서울광염교회 × 2026 키르기스스탄 여름 단기선교</strong><br>
   함께 기도하고, 함께 섬기며, 함께 나눕니다
 </footer>
+
 </body>
 </html>
