@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>선교자료 — 2026 키르기스스탄 단기선교</title>
+<title>찬양 — 2026 키르기스스탄 단기선교</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --primary: #1565C0; --primary-light: #42A5F5; --primary-dark: #0D47A1;
     --accent: #00BCD4; --accent-light: #80DEEA;
     --cream: #F0F7FF; --sand: #E1F0FD;
-    --text: #1A2A3A; --text-light: #5A7A9A;
+    --text: #1A2A3A; --text-light: #5A7A9A; --white: #FFFFFF;
     --card-bg: rgba(255,255,255,0.94);
     --shadow: 0 8px 32px rgba(21,101,192,0.08);
   }
@@ -18,6 +18,7 @@
   html { font-size:17px; scroll-behavior:smooth; }
   body { background:var(--cream); color:var(--text); font-family:'Noto Sans KR',sans-serif; line-height:1.7; }
 
+  /* ── Nav ── */
   .nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(66,165,245,0.12); box-shadow:0 2px 12px rgba(21,101,192,0.06); }
   .nav-inner { max-width:860px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:56px; }
   .nav-logo { font-family:'Noto Serif KR',serif; font-size:0.92rem; font-weight:900; color:var(--primary); text-decoration:none; white-space:nowrap; }
@@ -34,57 +35,53 @@
     .nav-menu a { padding:12px 16px; font-size:0.9rem; }
   }
 
+  /* ── Page ── */
   .container { max-width:860px; margin:0 auto; padding:0 24px; }
-  .page-header { padding:48px 0 32px; text-align:center; }
+  .back-link { display:inline-flex; align-items:center; gap:6px; margin-top:24px; padding:8px 16px; font-size:0.84rem; font-weight:600; color:var(--primary); text-decoration:none; border-radius:8px; transition:all 0.2s; }
+  .back-link:hover { background:rgba(66,165,245,0.08); }
+  .page-header { padding:32px 0 28px; text-align:center; }
   .page-header h1 { font-family:'Noto Serif KR',serif; font-size:1.8rem; font-weight:900; color:var(--primary); margin-bottom:8px; }
   .page-header p { color:var(--text-light); font-size:0.92rem; }
 
-  .menu-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-    margin-bottom:32px;
-  }
-  .menu-card {
+  /* ── Song Card ── */
+  .schedule-card {
     background:var(--card-bg);
     border-radius:16px;
     box-shadow:var(--shadow);
     border:1px solid rgba(66,165,245,0.12);
+    margin-bottom:28px;
     overflow:hidden;
-    text-decoration:none;
-    transition:transform 0.2s, box-shadow 0.2s;
-    display:block;
   }
-  .menu-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(21,101,192,0.15); }
-  .menu-card-header {
-    padding:24px 22px 18px;
+  .schedule-header {
+    padding:22px 28px;
     color:#fff;
   }
-  .menu-card-icon { font-size:2rem; margin-bottom:10px; }
-  .menu-card-title {
+  .schedule-header h2 {
     font-family:'Noto Serif KR',serif;
-    font-size:1.1rem;
+    font-size:1.2rem;
     font-weight:900;
-    color:#fff;
   }
-  .menu-card-desc {
-    padding:14px 22px 18px;
-    font-size:0.82rem;
-    color:var(--text-light);
-    line-height:1.6;
+  .schedule-header p {
+    font-size:0.78rem;
+    opacity:0.85;
+    margin-top:4px;
   }
+  .schedule-body { padding:28px; }
 
+  /* ── Footer ── */
   footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; margin-top:40px; }
   footer strong { color:var(--accent-light); }
 
   @media (max-width:600px) {
     html { font-size:15px; }
-    .menu-grid { grid-template-columns:1fr; }
+    .schedule-header { padding:18px 22px; }
+    .schedule-body { padding:22px; }
   }
 </style>
 </head>
 <body>
 
+<!-- ══════ Navigation ══════ -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">키르기스스탄 <span>단기선교</span></a>
@@ -99,47 +96,29 @@
   </div>
 </nav>
 
+<!-- ══════ Content ══════ -->
 <div class="container">
+  <a href="resources.html" class="back-link">← 선교자료로 돌아가기</a>
+
   <div class="page-header">
-    <h1>📂 선교자료</h1>
-    <p>키르기스스탄 단기선교 관련 자료 모음</p>
+    <h1>🎵 찬양</h1>
+    <p>선교 현지에서 함께 부를 찬양입니다</p>
   </div>
 
-  <div class="menu-grid">
-    <a href="res-schedule.html" class="menu-card">
-      <div class="menu-card-header" style="background:linear-gradient(135deg, var(--primary), var(--accent));">
-        <div class="menu-card-icon">📋</div>
-        <div class="menu-card-title">일정표</div>
-      </div>
-      <div class="menu-card-desc">7/23~7/31 · 8박 9일 선교 일정</div>
-    </a>
-
-    <a href="res-missionary.html" class="menu-card">
-      <div class="menu-card-header" style="background:linear-gradient(135deg, #1565C0, #0288D1);">
-        <div class="menu-card-icon">📨</div>
-        <div class="menu-card-title">선교사님 요청사항</div>
-      </div>
-      <div class="menu-card-desc">사역지별 상세 안내 · 주의사항</div>
-    </a>
-
-    <a href="res-songs.html" class="menu-card">
-      <div class="menu-card-header" style="background:linear-gradient(135deg, #AD1457, #E91E63);">
-        <div class="menu-card-icon">🎵</div>
-        <div class="menu-card-title">찬양</div>
-      </div>
-      <div class="menu-card-desc">키르기스어 찬양 악보</div>
-    </a>
-
-    <a href="res-preparation.html" class="menu-card">
-      <div class="menu-card-header" style="background:linear-gradient(135deg, #00695C, #00897B);">
-        <div class="menu-card-icon">✅</div>
-        <div class="menu-card-title">우리가 준비할 내용</div>
-      </div>
-      <div class="menu-card-desc">설교 · 게임 · 식사 · 준비물 체크리스트</div>
-    </a>
+  <div class="schedule-card">
+    <div class="schedule-header" style="background:linear-gradient(135deg, #AD1457, #E91E63);">
+      <h2>🎵 예배합니다 (I will worship you)</h2>
+      <p>작사·작곡 Rose Park / 번역 민호기 / 채보 김주형</p>
+    </div>
+    <div class="schedule-body" style="text-align:center;">
+      <img src="images/worship_song_01.png" alt="예배합니다 악보" style="max-width:100%; border-radius:12px; box-shadow:var(--shadow);">
+      <p style="font-size:0.78rem; color:var(--text-light); margin-top:12px;">키르기스어 발음 포함 · 한국어/러시아어/키르기스어</p>
+    </div>
   </div>
+
 </div>
 
+<!-- ══════ Footer ══════ -->
 <footer>
   <strong>서울광염교회 × 2026 키르기스스탄 여름 단기선교</strong><br>
   함께 기도하고, 함께 섬기며, 함께 나눕니다
