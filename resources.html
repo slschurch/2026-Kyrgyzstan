@@ -165,6 +165,33 @@
     border:1px solid rgba(66,165,245,0.15);
   }
 
+  /* ── Q&A ── */
+  .qa-item {
+    background:var(--sand);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:14px;
+    border-left:4px solid var(--primary-light);
+  }
+  .qa-item:last-child { margin-bottom:0; }
+  .qa-q {
+    font-size:0.85rem;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:6px;
+  }
+  .qa-a {
+    font-size:0.85rem;
+    color:var(--text-light);
+    line-height:1.8;
+  }
+  .qa-a strong { color:var(--text); }
+  .qa-item.important {
+    background:linear-gradient(135deg, #FFF3E0, #FFECB3);
+    border-color:#EF6C00;
+  }
+  .qa-item.important .qa-q { color:#BF360C; }
+
   /* ── Footer ── */
   footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; margin-top:40px; }
   footer strong { color:var(--accent-light); }
@@ -251,6 +278,126 @@
         <div class="day-detail">
           <li>오전 00:30분 출발</li>
         </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════ 사역지별 상세 안내 ══════ -->
+
+  <!-- 토크막 우리교회 -->
+  <div class="schedule-card">
+    <div class="schedule-header" style="background:linear-gradient(135deg, #1565C0, #0288D1);">
+      <h2>🏠 7월 24일 — 토크막 우리교회 여름성경학교</h2>
+      <p>오전 10시 ~ 오후 2시</p>
+    </div>
+    <div class="schedule-body">
+
+      <div class="qa-item">
+        <div class="qa-q">나이대가 어떻게 되나요?</div>
+        <div class="qa-a">유치원부터 고등학생까지이며, <strong>주로 초등학생</strong>들입니다. 처음으로 교회에 오는 아이들과 기존 교회 아이들이 함께합니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">몇 명 정도 되나요?</div>
+        <div class="qa-a"><strong>60명</strong> 예상합니다. 히잡을 쓴 여자아이들도 올 것입니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">활동 공간은?</div>
+        <div class="qa-a">교회 <strong>내부, 외부 모두 가능</strong>합니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">광염교회 준비사항</div>
+        <div class="qa-a"><strong>설교, 식사 대접, 간단한 게임</strong>을 준비해 주세요. 나머지는 현지인 목사님과 청년들이 진행합니다.</div>
+      </div>
+
+      <div class="qa-item important">
+        <div class="qa-q">⚠️ 주의사항</div>
+        <div class="qa-a">
+          아이들은 선물을 받기 위하여 옵니다. 그 아이들에게 복음을 전하는 것입니다.<br><br>
+          <strong style="color:#D32F2F;">설교 시 '예수'라는 단어를 가급적 자제해 주세요.</strong><br>
+          토크막 지역에서는 민감할 수 있습니다. 특히 <strong style="color:#D32F2F;">십자가를 무서워합니다.</strong><br><br>
+          노바빠블로프카 우리교회 목사님과 사모님, 청년들이 와서 복음을 전하고 프로그램을 도와줄 것입니다.
+          목사님이 짧게 설교해 주시고 게임을 진행해 주시면, 현지인 목사님과 성도들이 나머지를 이끌어 갈 것입니다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 장애인 시설 -->
+  <div class="schedule-card">
+    <div class="schedule-header" style="background:linear-gradient(135deg, #00695C, #00897B);">
+      <h2>🤝 7월 25일 — 장애인 시설 방문</h2>
+      <p>오전 10시 ~ 오후 12시 (약 2시간)</p>
+    </div>
+    <div class="schedule-body">
+
+      <div class="qa-item">
+        <div class="qa-q">대상 나이대는?</div>
+        <div class="qa-a"><strong>어른들</strong>입니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">몇 명 정도 되나요?</div>
+        <div class="qa-a"><strong>150명</strong> 정도입니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">장애 유형은?</div>
+        <div class="qa-a"><strong>지적 장애인 중심</strong>입니다. 지적·육체적 장애를 함께 가지고 있는 분들도 계십니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">활동 공간은?</div>
+        <div class="qa-a">실내가 아니라 <strong>실외</strong>에서 활동합니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">어떻게 하면 되나요?</div>
+        <div class="qa-a"><strong>같이 놀아준다고 생각하시면 됩니다.</strong> 악기 등 음악(워십)을 해주셔도 좋습니다. 페이스 페인팅, 풍선 만들기 등 준비해 주세요.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 노바빠블로프카 우리교회 -->
+  <div class="schedule-card">
+    <div class="schedule-header" style="background:linear-gradient(135deg, #4527A0, #7B1FA2);">
+      <h2>⛪ 7월 26~29일 — 노바빠블로프카 우리교회 여름성경학교</h2>
+      <p>오전 9시 ~ 오후 4시 30분 · 3일간</p>
+    </div>
+    <div class="schedule-body">
+
+      <div class="qa-item">
+        <div class="qa-q">나이대가 어떻게 되나요?</div>
+        <div class="qa-a">유치원부터 고등학생까지, <strong>교회 학교 학생들 위주</strong>입니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">몇 명 정도 되나요?</div>
+        <div class="qa-a"><strong>60명</strong>입니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">활동 공간은?</div>
+        <div class="qa-a">교회 <strong>내부, 외부 모두 가능</strong>합니다.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">광염교회 준비사항</div>
+        <div class="qa-a">
+          <strong>설교</strong> (3회), <strong>식사 대접</strong> (1회), <strong>게임</strong> (2회, 이틀에 걸쳐서)<br><br>
+          간단한 게임을 준비해 주세요. 복잡하면 진행하기 어렵습니다.<br>
+          예시: <strong>과자 따먹기, 물총, 물든 풍선 던지기</strong> 등
+        </div>
+      </div>
+
+      <div class="qa-item" style="background:rgba(76,175,80,0.06); border-color:#4CAF50;">
+        <div class="qa-q" style="color:#2E7D32;">✅ 좋은 소식</div>
+        <div class="qa-a">주의사항이 <strong>없습니다!</strong> 마음껏 설교하시고 프로그램을 진행하시면 됩니다.</div>
       </div>
 
     </div>
