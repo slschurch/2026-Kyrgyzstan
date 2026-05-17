@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>장애인 시설 봉사팀 — 2026 키르기스스탄 단기선교</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1565C0; --primary-light: #42A5F5; --primary-dark: #0D47A1;
+    --accent: #00BCD4; --accent-light: #80DEEA;
+    --cream: #F0F7FF; --sand: #E1F0FD;
+    --text: #1A2A3A; --text-light: #5A7A9A; --white: #FFFFFF;
+    --card-bg: rgba(255,255,255,0.94);
+    --shadow: 0 8px 32px rgba(21,101,192,0.08);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { font-size:17px; scroll-behavior:smooth; }
+  body { background:var(--cream); color:var(--text); font-family:'Noto Sans KR',sans-serif; line-height:1.7; }
+
+  /* ── Nav ── */
+  .nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(66,165,245,0.12); box-shadow:0 2px 12px rgba(21,101,192,0.06); }
+  .nav-inner { max-width:860px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:56px; }
+  .nav-logo { font-family:'Noto Serif KR',serif; font-size:0.92rem; font-weight:900; color:var(--primary); text-decoration:none; white-space:nowrap; }
+  .nav-logo span { color:var(--accent); }
+  .nav-menu { display:flex; gap:4px; list-style:none; }
+  .nav-menu a { display:block; padding:8px 16px; font-size:0.82rem; font-weight:600; color:var(--text-light); text-decoration:none; border-radius:8px; transition:all 0.2s; }
+  .nav-menu a:hover { color:var(--primary); background:rgba(66,165,245,0.08); }
+  .nav-menu a.active { color:var(--primary); background:rgba(66,165,245,0.1); }
+  .nav-toggle { display:none; background:none; border:none; font-size:1.4rem; color:var(--text); cursor:pointer; padding:4px; }
+  @media (max-width:600px) {
+    .nav-toggle { display:block; }
+    .nav-menu { display:none; position:absolute; top:56px; left:0; right:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); flex-direction:column; padding:8px 16px 16px; border-bottom:1px solid rgba(66,165,245,0.12); box-shadow:0 8px 24px rgba(21,101,192,0.08); }
+    .nav-menu.open { display:flex; }
+    .nav-menu a { padding:12px 16px; font-size:0.9rem; }
+  }
+
+  .container { max-width:860px; margin:0 auto; padding:0 24px; }
+  .back-link { display:inline-flex; align-items:center; gap:6px; margin-top:20px; font-size:0.82rem; color:var(--primary-light); text-decoration:none; font-weight:600; }
+  .back-link:hover { color:var(--primary); }
+
+  /* ── Team Page ── */
+  .page-title {
+    text-align:center;
+    padding:32px 0 6px;
+  }
+  .page-title h1 {
+    font-family:'Noto Serif KR',serif;
+    font-size:1.5rem;
+    font-weight:900;
+    color:var(--text);
+  }
+  .subtitle {
+    text-align:center;
+    font-size:1rem;
+    color:var(--text-light);
+    margin-bottom:24px;
+  }
+  .leader-bar {
+    text-align:center;
+    background:#fff3e0;
+    border:1.5px solid #ffcc80;
+    border-radius:12px;
+    padding:10px 20px;
+    font-size:1rem;
+    font-weight:bold;
+    color:#e65100;
+    margin-bottom:28px;
+  }
+  .teams-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .team-card {
+    border-radius:16px;
+    padding:18px 16px;
+    background:#fff;
+  }
+  .team-card.team1 { background:#fff9e6; border:1.5px solid #f5d76e; }
+  .team-card.team2 { background:#e8f0fe; border:1.5px solid #90b8f8; }
+  .team-card.team3 { background:#e8f5e9; border:1.5px solid #a5d6a7; }
+  .team-card.team4 { background:#fce4ec; border:1.5px solid #f48fb1; }
+  .team-header {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:1.05rem;
+    font-weight:bold;
+    margin-bottom:12px;
+  }
+  .dot {
+    width:14px; height:14px; border-radius:50%; display:inline-block;
+  }
+  .dot-red { background:#e53935; }
+  .dot-blue { background:#1e88e5; }
+  .dot-green { background:#43a047; }
+  .dot-pink { background:#e91e63; }
+  .count { font-size:0.85rem; color:#888; font-weight:normal; }
+  .activity-badge {
+    border-radius:10px;
+    padding:9px 14px;
+    margin-bottom:12px;
+    font-size:0.85rem;
+    font-weight:600;
+    line-height:1.6;
+  }
+  .team-card.team1 .activity-badge { background:#fff0b3; color:#7a5800; border-left:4px solid #f5c400; }
+  .team-card.team2 .activity-badge { background:#dce8ff; color:#1a3a8a; border-left:4px solid #4a7eff; }
+  .team-card.team3 .activity-badge { background:#d4edda; color:#1a5c2a; border-left:4px solid #43a047; }
+  .activity-title { font-size:0.8rem; opacity:0.7; margin-bottom:2px; }
+  .member-item {
+    background:#fff;
+    border-radius:10px;
+    padding:9px 14px;
+    margin-bottom:8px;
+    font-size:0.92rem;
+    font-weight:500;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06);
+  }
+  .team-card.team1 .member-item { color:#b07d00; }
+  .team-card.team2 .member-item { color:#1a3a8a; }
+  .team-card.team3 .member-item { color:#1a5c2a; }
+  .team-card.team4 .member-item { color:#880e4f; }
+
+  footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; margin-top:40px; }
+  footer strong { color:var(--accent-light); }
+
+  @media (max-width:600px) {
+    html { font-size:15px; }
+    .teams-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">키르기스스탄 <span>단기선교</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="메뉴">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">안내</a></li>
+      <li><a href="worship.html">예배</a></li>
+      <li><a href="board.html">게시판</a></li>
+      <li><a href="gallery.html">사진게시판</a></li>
+      <li><a href="resources.html" class="active">선교자료</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="resources.html#missionary" class="back-link">← 선교자료로 돌아가기</a>
+
+  <div class="page-title"><h1>🙏 장애인 시설 봉사팀</h1></div>
+  <p class="subtitle">서울광염교회</p>
+
+  <div class="leader-bar">인도 : 이인수 목사</div>
+
+  <div class="teams-grid">
+    <!-- 1팀 -->
+    <div class="team-card team1">
+      <div class="team-header">
+        <span class="dot dot-red"></span>
+        1팀 <span class="count">(5명)</span>
+      </div>
+      <div class="activity-badge">
+        <div class="activity-title">🎯 담당 활동</div>
+        신체놀이 — 풍선 옮기기, 간이 보치아 등
+      </div>
+      <div class="member-item">전란희 권사님</div>
+      <div class="member-item">김미숙 집사님</div>
+      <div class="member-item">김용부 권사님</div>
+      <div class="member-item">이인순 권사님</div>
+      <div class="member-item">유수경 권사님</div>
+    </div>
+
+    <!-- 2팀 -->
+    <div class="team-card team2">
+      <div class="team-header">
+        <span class="dot dot-blue"></span>
+        2팀 <span class="count">(5명)</span>
+      </div>
+      <div class="activity-badge">
+        <div class="activity-title">🎨 담당 활동</div>
+        만들기 — 부채, 팽이, 요술풍선
+      </div>
+      <div class="member-item">안이숙 권사님</div>
+      <div class="member-item">윤성미 권사님</div>
+      <div class="member-item">박경란 권사님</div>
+      <div class="member-item">박용옥 권사님</div>
+      <div class="member-item">강정석 집사님</div>
+    </div>
+
+    <!-- 3팀 -->
+    <div class="team-card team3">
+      <div class="team-header">
+        <span class="dot dot-green"></span>
+        3팀 <span class="count">(5명)</span>
+      </div>
+      <div class="activity-badge">
+        <div class="activity-title">🪃 담당 활동</div>
+        전통놀이 — 투호던지기, 오재미 던지기, 제기차기 등
+      </div>
+      <div class="member-item">이석조 권사님</div>
+      <div class="member-item">하윤심 권사님</div>
+      <div class="member-item">김경민 권사님</div>
+      <div class="member-item">박정원 권사님</div>
+      <div class="member-item">김혜진 집사님</div>
+    </div>
+
+    <!-- 후발대팀 -->
+    <div class="team-card team4">
+      <div class="team-header">
+        <span class="dot dot-pink"></span>
+        후발대팀 <span class="count">(4명)</span>
+      </div>
+      <div class="member-item">김서은 청년</div>
+      <div class="member-item">이시온 집사님</div>
+      <div class="member-item">주윤빈 집사님</div>
+      <div class="member-item">박승호 집사님</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>서울광염교회 × 2026 키르기스스탄 여름 단기선교</strong><br>
+  함께 기도하고, 함께 섬기며, 함께 나눕니다
+</footer>
+
+</body>
+</html>
