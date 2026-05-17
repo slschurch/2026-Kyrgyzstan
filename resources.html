@@ -192,6 +192,102 @@
   }
   .qa-item.important .qa-q { color:#BF360C; }
 
+  /* ── Sub Nav ── */
+  .sub-nav {
+    display:flex;
+    gap:8px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+  .sub-nav a {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 20px;
+    border-radius:12px;
+    font-size:0.85rem;
+    font-weight:700;
+    text-decoration:none;
+    color:var(--text-light);
+    background:var(--card-bg);
+    border:1px solid rgba(66,165,245,0.12);
+    box-shadow:var(--shadow);
+    transition:all 0.2s;
+  }
+  .sub-nav a:hover { color:var(--primary); border-color:var(--primary-light); transform:translateY(-2px); }
+  .sub-nav a.active-sub { color:#fff; background:linear-gradient(135deg, var(--primary), var(--primary-light)); border-color:transparent; }
+
+  .section-divider {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:40px 0 24px;
+  }
+  .section-divider h2 {
+    font-family:'Noto Serif KR',serif;
+    font-size:1.3rem;
+    font-weight:900;
+    color:var(--primary);
+    white-space:nowrap;
+  }
+  .section-divider::after {
+    content:'';
+    flex:1;
+    height:2px;
+    background:linear-gradient(90deg, var(--primary-light), transparent);
+    border-radius:2px;
+  }
+
+  /* ── Checklist ── */
+  .checklist-card {
+    background:var(--card-bg);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(66,165,245,0.12);
+    margin-bottom:16px;
+    padding:22px 26px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .checklist-icon {
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    background:linear-gradient(135deg, var(--primary-light), var(--accent));
+    color:#fff;
+  }
+  .checklist-content h4 {
+    font-size:0.92rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:4px;
+  }
+  .checklist-content p {
+    font-size:0.84rem;
+    color:var(--text-light);
+    line-height:1.7;
+  }
+  .checklist-content strong { color:var(--primary); }
+  .checklist-tag {
+    display:inline-block;
+    font-size:0.68rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:6px;
+    margin-right:6px;
+    margin-bottom:4px;
+  }
+  .tag-tokmak { background:#E3F2FD; color:#1565C0; }
+  .tag-nova { background:#EDE7F6; color:#4527A0; }
+  .tag-disabled { background:#E0F2F1; color:#00695C; }
+  .tag-all { background:#FFF3E0; color:#E65100; }
+
   /* ── Footer ── */
   footer { background:var(--primary-dark); color:rgba(255,255,255,0.85); text-align:center; padding:32px 24px; font-size:0.8rem; line-height:1.7; margin-top:40px; }
   footer strong { color:var(--accent-light); }
@@ -227,9 +323,15 @@
     <p>키르기스스탄 단기선교 관련 자료 모음</p>
   </div>
 
-  <div class="source-tag">📨 현지 선교사님(송영모) 요청사항 기반</div>
+  <!-- ══════ 하위 메뉴 ══════ -->
+  <div class="sub-nav">
+    <a href="#schedule" class="active-sub">📋 일정표</a>
+    <a href="#missionary">📨 선교사님 요청사항</a>
+    <a href="#preparation">✅ 우리가 준비할 내용</a>
+  </div>
 
   <!-- ══════ 일정표 ══════ -->
+  <div id="schedule" class="section-divider"><h2>📋 일정표</h2></div>
   <div class="schedule-card">
     <div class="schedule-header">
       <h2>📋 선교 일정표</h2>
@@ -283,7 +385,9 @@
     </div>
   </div>
 
-  <!-- ══════ 사역지별 상세 안내 ══════ -->
+  <!-- ══════ 선교사님 요청사항 ══════ -->
+  <div id="missionary" class="section-divider"><h2>📨 선교사님 요청사항</h2></div>
+  <div class="source-tag">📨 현지 선교사님(송영모) 요청사항 기반</div>
 
   <!-- 토크막 우리교회 -->
   <div class="schedule-card">
@@ -403,33 +507,77 @@
     </div>
   </div>
 
-  <!-- ══════ 광염교회 준비사항 ══════ -->
-  <div class="prep-section">
-    <div class="prep-header">
-      <h2>✅ 광염교회 준비사항</h2>
+  <!-- ══════ 우리가 준비할 내용 ══════ -->
+  <div id="preparation" class="section-divider"><h2>✅ 우리가 준비할 내용</h2></div>
+
+  <!-- 설교 -->
+  <div class="checklist-card">
+    <div class="checklist-icon">📖</div>
+    <div class="checklist-content">
+      <h4>설교 준비 — 총 5회</h4>
+      <p>
+        <span class="checklist-tag tag-tokmak">토크막</span> 여름성경학교 설교 <strong>1회</strong> (짧게, '예수' 단어 자제)<br>
+        <span class="checklist-tag tag-nova">노바빠블로프카</span> 여름성경학교 설교 <strong>3회</strong><br>
+        <span class="checklist-tag tag-nova">노바빠블로프카</span> 어른 예배 설교 <strong>1회</strong>
+      </p>
     </div>
-    <div class="prep-body">
+  </div>
 
-      <div class="prep-item">
-        <h4>🎨 장애인 시설 방문 준비</h4>
-        <p>장애인들을 위하여 <strong>페이스 페인팅, 풍선 만들기</strong> 등을 준비해 주세요 (워십도 괜찮습니다). 방문 시 광염교회에서 준비한 선물을 전달하겠습니다. (경비를 주시면 현지에서 <strong>어른용 기저귀</strong> 등을 구입하겠습니다)</p>
-      </div>
+  <!-- 레크레이션 -->
+  <div class="checklist-card">
+    <div class="checklist-icon">🎮</div>
+    <div class="checklist-content">
+      <h4>레크레이션(게임) 준비 — 총 3회</h4>
+      <p>
+        <span class="checklist-tag tag-tokmak">토크막</span> 간단한 게임 <strong>1회</strong><br>
+        <span class="checklist-tag tag-nova">노바빠블로프카</span> 간단한 게임 <strong>2회</strong> (이틀에 걸쳐서)<br><br>
+        복잡하면 진행이 어렵습니다. 간단한 게임으로 준비해 주세요.<br>
+        예시: <strong>과자 따먹기, 물총, 물든 풍선 던지기</strong> 등
+      </p>
+    </div>
+  </div>
 
-      <div class="prep-item">
-        <h4>📖 설교 준비</h4>
-        <p>광염교회 목사님 설교 준비: <strong>토크막 우리교회 1회</strong>, <strong>노바빠블로프카 우리교회 3회</strong>, <strong>어른 예배 설교 1회</strong> — 총 5회 준비해 주세요.</p>
-      </div>
+  <!-- 식사 대접 -->
+  <div class="checklist-card">
+    <div class="checklist-icon">🍽️</div>
+    <div class="checklist-content">
+      <h4>식사 대접 준비 — 총 2회</h4>
+      <p>
+        여름성경학교 기간 중 한국식 점심 식사 대접<br>
+        <span class="checklist-tag tag-tokmak">토크막</span> <strong>1회</strong> (60명 대상)<br>
+        <span class="checklist-tag tag-nova">노바빠블로프카</span> <strong>1회</strong> (60명 대상)
+      </p>
+    </div>
+  </div>
 
-      <div class="prep-item">
-        <h4>🎮 레크레이션(게임) 준비</h4>
-        <p><strong>토크막 우리교회 1회</strong>, <strong>노바빠블로프카 우리교회 2회</strong> — 총 3회 레크레이션을 진행할 수 있도록 준비해 주세요.</p>
-      </div>
+  <!-- 장애인 시설 -->
+  <div class="checklist-card">
+    <div class="checklist-icon">🤝</div>
+    <div class="checklist-content">
+      <h4>장애인 시설 방문 준비</h4>
+      <p>
+        <span class="checklist-tag tag-disabled">장애인시설</span> 150명 어른 대상, 실외 활동<br><br>
+        <strong>페이스 페인팅, 풍선 만들기</strong> 등을 준비해 주세요 (워십/악기도 가능)<br>
+        방문 시 광염교회에서 준비한 선물을 전달합니다.<br>
+        경비를 주시면 현지에서 <strong>어른용 기저귀</strong> 등을 구입하겠습니다.
+      </p>
+    </div>
+  </div>
 
-      <div class="prep-item">
-        <h4>🍽️ 식사 대접 준비</h4>
-        <p>여름성경학교 기간 중 한국식 점심 식사 대접: <strong>토크막 우리교회 1회</strong>, <strong>노바빠블로프카 우리교회 1회</strong> — 총 2회 준비해 주세요.</p>
-      </div>
-
+  <!-- 공통 준비물 -->
+  <div class="checklist-card" style="border:2px dashed var(--accent);">
+    <div class="checklist-icon" style="background:linear-gradient(135deg, #EF6C00, #FF9800);">📦</div>
+    <div class="checklist-content">
+      <h4>공통 준비물 체크리스트</h4>
+      <p>
+        <span class="checklist-tag tag-all">공통</span> 페이스 페인팅 도구<br>
+        <span class="checklist-tag tag-all">공통</span> 풍선 (일반 + 물풍선)<br>
+        <span class="checklist-tag tag-all">공통</span> 물총<br>
+        <span class="checklist-tag tag-all">공통</span> 과자 (게임용 + 간식용)<br>
+        <span class="checklist-tag tag-all">공통</span> 악기 (워십용)<br>
+        <span class="checklist-tag tag-all">공통</span> 한국식 식사 재료 (2회분)<br>
+        <span class="checklist-tag tag-all">공통</span> 선물 (장애인 시설용)
+      </p>
     </div>
   </div>
 
